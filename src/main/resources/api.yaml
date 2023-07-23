@@ -31,16 +31,16 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ArrayOfArticle'
+                $ref: '#/components/schemas/ArrayOfArticleDto'
     summary: Represents the list of article
     description: List of all articles already register in the system
 components:
   schemas:
-    ArrayOfArticle:
+    ArrayOfArticleDto:
       type: array
       items:
-        $ref: '#/components/schemas/Article'
-    Article:
+        $ref: '#/components/schemas/ArticleDto'
+    ArticleDto:
       type: object
       properties:
         id:
