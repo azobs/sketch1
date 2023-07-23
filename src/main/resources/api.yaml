@@ -1,0 +1,59 @@
+openapi: 3.0.3
+info:
+  title: Title
+  description: Title
+  version: 1.0.0
+servers:
+  - url: '{protocol}://{host}:{port}/sketch1/v1'
+    description: All endpoint for Sketch api
+    variables:
+      protocol:
+        enum:
+          - 'http'
+          - 'https'
+        default: 'http'
+      host:
+        default: localhost
+        description: The local server where the sketch1 api is located
+      port:
+        enum:
+          - '8080'
+          - '8081'
+        default: '8081'
+        description: The default port where the sketch api responds
+paths:
+  /articles:
+    get:
+      operationId: getListofArticle
+      responses:
+        '200':
+          description: Sucessfull operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArrayOfArticle'
+    summary: Represents the list of article
+    description: List of all articles already register in the system
+components:
+  schemas:
+    ArrayOfArticle:
+      type: array
+      items:
+        $ref: '#/components/schemas/Article'
+    Article:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        artCode:
+          type: string
+        artName:
+          type: string
+        artPrice:
+          type: number
+          format: double
+      required:
+        - artCode
+        - artName
+        - artPrice
