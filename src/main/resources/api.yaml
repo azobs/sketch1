@@ -34,6 +34,7 @@ paths:
                 $ref: '#/components/schemas/ArrayOfArticleDto'
     summary: Represents the list of article
     description: List of all articles already register in the system
+
 components:
   schemas:
     ArrayOfArticleDto:

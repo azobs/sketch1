@@ -15,12 +15,14 @@ import java.math.BigDecimal;
 @Entity
 @Table(name="article",
         uniqueConstraints = {@UniqueConstraint(columnNames = {"artCode"})})
-public class Article extends AbstractEntity{
-    @Column(nullable = false)
-    String artCode;
+public class Article extends AbstractEntity {
 
     @Column(nullable = false)
-    String artName;
+    private String artCode;
+
     @Column(nullable = false)
-    BigDecimal artPrice;
+    private String artName;
+
+    @Column(nullable = false)
+    private BigDecimal artPrice;
 }
