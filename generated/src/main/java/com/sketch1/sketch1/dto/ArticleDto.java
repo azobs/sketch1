@@ -12,7 +12,7 @@ import javax.validation.constraints.*;
 /**
  * ArticleDto
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-07-23T14:10:18.052568617-04:00[America/Toronto]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-07-24T15:52:42.067541900+01:00[Africa/Douala]")
 public class ArticleDto   {
   @JsonProperty("id")
   private Long id;

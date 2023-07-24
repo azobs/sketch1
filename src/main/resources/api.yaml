@@ -22,7 +22,7 @@ servers:
         default: '8081'
         description: The default port where the sketch api responds
 paths:
-  /articles:
+  /article/all:
     get:
       operationId: getListofArticle
       responses:
@@ -34,6 +34,24 @@ paths:
                 $ref: '#/components/schemas/ArrayOfArticleDto'
     summary: Represents the list of article
     description: List of all articles already register in the system
+  /article/create:
+    post:
+      summary: call the saveArticle method to add an article in the system
+      operationId: saveArticle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ArticleDto'
+      responses:
+        '200':
+          description: Article saved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArticleDto'
+    summary: Represents a method used to save article
+    description: New article saved in the system
 
 components:
   schemas:
